@@ -6,4 +6,6 @@ d = { 'settings': { 'branch': 'master',
                 'git_url': 'https://github.com/Mees-Molenaar/grocking_simplicity_python',
                 'lib_path': 'grocking_simplicity_python'},
   'syms': { 'grocking_simplicity_python.core': { 'grocking_simplicity_python.core.foo': ( 'core.html#foo',
-                                                                                          'grocking_simplicity_python/core.py')}}}
+                                                                                          'grocking_simplicity_python/core.py'),
+                                                 'grocking_simplicity_python.core.say_hello': ( 'core.html#say_hello',
+                                                                                                'grocking_simplicity_python/core.py')}}}
