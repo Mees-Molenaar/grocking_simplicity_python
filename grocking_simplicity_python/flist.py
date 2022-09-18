@@ -3,6 +3,10 @@
 # %% auto 0
 __all__ = ['listAppend']
 
+# %% ../01_list.ipynb 2
+from typing import List, Any
+import copy
+
 # %% ../01_list.ipynb 6
 def listAppend(
     _list: List,
