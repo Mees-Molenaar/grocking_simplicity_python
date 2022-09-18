@@ -8,4 +8,10 @@ d = { 'settings': { 'branch': 'master',
   'syms': { 'grocking_simplicity_python.core': { 'grocking_simplicity_python.core.foo': ( 'core.html#foo',
                                                                                           'grocking_simplicity_python/core.py'),
                                                  'grocking_simplicity_python.core.say_hello': ( 'core.html#say_hello',
-                                                                                                'grocking_simplicity_python/core.py')}}}
+                                                                                                'grocking_simplicity_python/core.py')},
+            'grocking_simplicity_python.dict': { 'grocking_simplicity_python.dict.dictRemove': ( 'dict.html#dictremove',
+                                                                                                 'grocking_simplicity_python/dict.py'),
+                                                 'grocking_simplicity_python.dict.dictSet': ( 'dict.html#dictset',
+                                                                                              'grocking_simplicity_python/dict.py')},
+            'grocking_simplicity_python.list': { 'grocking_simplicity_python.list.listAppend': ( 'list.html#listappend',
+                                                                                                 'grocking_simplicity_python/list.py')}}}
