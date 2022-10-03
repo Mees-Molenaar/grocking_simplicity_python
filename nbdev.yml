@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "grocking_simplicity_python"
+  site-url: "https://Mees-Molenaar.github.io/grocking_simplicity_python"
+  description: "A functional programming python package based on Grocking Simplicity"
+  repo-branch: master
+  repo-url: "https://github.com/Mees-Molenaar/grocking_simplicity_python"
