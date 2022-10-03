@@ -1,37 +1,20 @@
-ipynb-filters: [nbdev_filter]
-
 project:
   type: website
-  output-dir: _docs
-  preview:
-    port: 3000
-    browser: false
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    toc-depth: 4
 
 website:
-  title: "grocking_simplicity_python"
-  site-url: "https://Mees-Molenaar.github.io/grocking_simplicity_python"
-  description: "A functional programming python package based on Grocking Simplicity"
   twitter-card: true
   open-graph: true
-  repo-branch: master
-  repo-url: "https://github.com/Mees-Molenaar/grocking_simplicity_python"
   repo-actions: [issue]
   navbar:
     background: primary
     search: true
-    right:
-      - icon: github
-        href: "https://github.com/Mees-Molenaar/grocking_simplicity_python"
   sidebar:
-    style: "floating"
+    style: floating
 
-metadata-files: 
-  - sidebar.yml
-  - custom.yml
+metadata-files: [nbdev.yml, sidebar.yml]
