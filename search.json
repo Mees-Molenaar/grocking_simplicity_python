@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "list.html",
+    "href": "list.html",
+    "title": "flist",
+    "section": "",
+    "text": "Just as in dict we implement immutability of lists by implementing a copy-on-write principle.\nThe first thing we want to do is add items to a List.\n\nsource\n\n\n\n listAppend (_list:List, item:Any)\n\n\nexpected_list = ['foo']\ntest_eq(\n    listAppend([], 'foo'),\n    expected_list\n)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "grocking_simplicity_python",
+    "section": "",
+    "text": "Initially, this python library is based on Grokking Simplicity by Eric Normand. In Grokking Simplicity, Eric makes Javascript functions to implement functional programming principles. In this library I want to implement these principles in python.\nProbably, this package will be a living thing. I will start with some basic immutability functionalities for dictionaries and lists. This immutability is important to separate code into Data, Calculations and Actions, which (I think) is a powerful pattern to use in python programs.\nFurthermore, this package is made using nbdev. This is my first experience with developing in this manner.\nLet us see where this journey will take us 😊\nIf there is any feedback on the structure of the project or the code, I am happy to learn from your feedback! Please let me know 😇"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "grocking_simplicity_python",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2"
+  },
+  {
+    "objectID": "dict.html",
+    "href": "dict.html",
+    "title": "fdict",
+    "section": "",
+    "text": "source\n\nwithDictCopy\n\n withDictCopy (_dict:Dict, modify:Callable)\n\nFor example:\n\nperson = {\n    'firstName': 'Bert',\n    'lastName': 'the Goat',\n}\n\n\nexpected = {\n    'firstName': 'BERT',\n    'lastName': 'THE GOAT',\n}\n\n# Helper function to uppercase every value in the dictionary\ndef upper(_dict):\n    for key, value in _dict.items():\n        _dict[key] = value.upper()\n    return _dict\n\n# Uppercase everything with the Dict Copy\ndef toUpper(person):\n    return withDictCopy(\n        person, \n        upper)\n\n\ntest_eq(toUpper(person), expected)\n\nWe start by creating a function which implements a copy-on-write principle to set key, value pairs in a dictionary.\n\nsource\n\n\ndictSet\n\n dictSet (_dict:Dict, key:Any, value:Any)\n\nIt should set a new key, value pair when the key does not exist.\n\nexpected_dict = {\n    'foo': 'bar'\n}\n\ntest_eq(\n    dictSet({}, 'foo', 'bar'),\n    expected_dict,\n)\n\nIt should update the key, value pair when the key does exist. Take into account that the dictionary is still immutable since it makes a copy!!\n\nexpected_dict = {\n    'foo': 'baz'\n}\n\ntest_eq(\n    dictSet({'foo': 'bar'}, 'foo', 'baz'),\n    expected_dict\n)\n\nThen it will also be great to remove a key from the dictionary\n\nsource\n\n\ndictRemove\n\n dictRemove (_dict:Dict, key:Any)\n\nIt should delete the key, value pair with the given key from the dictionary.\n\nexpected_dict = {}\n\ntest_eq(\n    dictRemove({'foo': 'bar'}, 'foo'),\n    expected_dict\n)\n\n\nexpected_dict = {'ham': 'spam'}\n\ntest_eq(\n    dictRemove({'foo': 'bar', 'ham': 'spam'}, 'foo'),\n    expected_dict\n)"
+  },
+  {
+    "objectID": "copy.html",
+    "href": "copy.html",
+    "title": "copyOnWrite",
+    "section": "",
+    "text": "In functional programming a large focus point is immutability. This is especially important in multi-threaded programs since we are gauranteed that variables in one thread are not corrupted by another thread. We never have to worry about another part of our program to interfere with our variables.\nWe implement immutability by using the copy-on-write principle. In this manner, we can easily create our own function/setter implementations with a copy-on-write principle.\n\nsource\n\n\n\n withCopy (_toCopy:~T, modify:Callable)\n\n\nexpected = \"BERT\"\n\ndef upper(_copy: str) -> str:\n    return _copy.upper()\n\ndef toUpper(_string):\n    return withCopy(_string, upper)\n\n\ntest_eq(toUpper('bert'), expected)"
+  }
+]
